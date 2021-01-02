@@ -1,23 +1,94 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import styled from 'styled-components/macro';
+import imgSrc from '../images/portfolioImage.jpeg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faLinkedin,
+  faGithub,
+  faXing,
+  faCodepen,
+} from '@fortawesome/free-brands-svg-icons';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const Icons = {
+  linkedIn: faLinkedin,
+  github: faGithub,
+  xing: faXing,
+  codepen: faCodepen,
+};
+
+const IconLink = ({ icon, href, label }) => (
+  <a
+    href={href}
+    target="__blank"
+    style={{ textDecoration: 'none', color: 'inherit' }}
+    aria-label={label}
+    title={label}
+  >
+    <FontAwesomeIcon icon={icon} size="3x" />
+  </a>
+);
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Personal portfolio coming soon...</h1>
-    {/*<h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br /> */}
-    {/* <Link to="/using-typescript/">Go to "Using TypeScript"</Link> */}
+    <MainPage>
+      <AboutSectionWrapper>
+        <ImageWrapper>
+          <img src={imgSrc} />
+        </ImageWrapper>
+        <IconsWrapper>
+          <IconLink
+            icon={Icons.linkedIn}
+            href="https://www.linkedin.com/in/manojsatya"
+            label="linkedIn"
+          />
+          <IconLink
+            icon={Icons.github}
+            href="https://github.com/manojsatya"
+            label="github"
+          />
+          <IconLink
+            icon={Icons.xing}
+            href="https://www.xing.com/profile/Manoj_Satyanarayana/cv"
+            label="xing"
+          />
+          <IconLink
+            icon={Icons.codepen}
+            href="https://codepen.io/manu_js"
+            label="codepen"
+          />
+        </IconsWrapper>
+      </AboutSectionWrapper>
+    </MainPage>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
+
+const ImageWrapper = styled.div`
+  img {
+    max-width: 200px;
+    border-radius: 50%;
+  }
+`;
+
+const MainPage = styled.div`
+  height: 80vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const AboutSectionWrapper = styled.div`
+  display: grid;
+  text-align: center;
+`;
+
+const IconsWrapper = styled.div`
+  min-width: 40vw;
+  display: flex;
+  justify-content: space-evenly;
+`;
