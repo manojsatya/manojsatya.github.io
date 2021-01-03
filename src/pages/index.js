@@ -38,6 +38,10 @@ const IndexPage = () => (
         <ImageWrapper>
           <img src={imgSrc} />
         </ImageWrapper>
+        <h3>
+          Hi, I am Manoj Satyanarayana. I am a software developer in Hamburg,
+          Germany
+        </h3>
         <IconsWrapper>
           <IconLink
             icon={Icons.linkedIn}
