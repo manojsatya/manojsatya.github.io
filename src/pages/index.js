@@ -39,8 +39,8 @@ const IndexPage = () => (
           <img src={imgSrc} />
         </ImageWrapper>
         <h3>
-          Hi, I am Manoj Satyanarayana. I am a software developer in Hamburg,
-          Germany
+          Hi, I am Manoj Satyanarayana from India. I am a software developer in
+          Hamburg, Germany
         </h3>
         <IconsWrapper>
           <IconLink
