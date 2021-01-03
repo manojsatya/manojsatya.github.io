@@ -36,7 +36,7 @@ const IndexPage = () => (
     <MainPage>
       <AboutSectionWrapper>
         <ImageWrapper>
-          <img src={imgSrc} />
+          <img src={imgSrc} alt="portfolio" />
         </ImageWrapper>
         <h3>
           Hi, I am Manoj Satyanarayana from India. I am a software developer in
