@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import styled from 'styled-components/macro';
 import imgSrc from '../images/portfolioImage.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -33,16 +32,18 @@ const IconLink = ({ icon, href, label }) => (
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <MainPage>
-      <AboutSectionWrapper>
-        <ImageWrapper>
-          <img src={imgSrc} alt="portfolio" />
-        </ImageWrapper>
-        <h3>
+    <div className="flex justify-center items-center m-auto h-screen">
+      <div className="grid text-center">
+        <img
+          src={imgSrc}
+          alt="portfolio"
+          className="max-w-xs rounded-full mx-auto"
+        />
+        <h3 className="m-4">
           Hi, I am Manoj Satyanarayana from India. I am a software developer in
           Hamburg, Germany
         </h3>
-        <IconsWrapper>
+        <div className="flex justify-evenly m-5">
           <IconLink
             icon={Icons.linkedIn}
             href="https://www.linkedin.com/in/manojsatya"
@@ -63,36 +64,10 @@ const IndexPage = () => (
             href="https://codepen.io/manu_js"
             label="codepen"
           />
-        </IconsWrapper>
-      </AboutSectionWrapper>
-    </MainPage>
+        </div>
+      </div>
+    </div>
   </Layout>
 );
 
 export default IndexPage;
-
-const ImageWrapper = styled.div`
-  img {
-    max-width: 200px;
-    border-radius: 50%;
-  }
-`;
-
-const MainPage = styled.div`
-  height: 80vh;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const AboutSectionWrapper = styled.div`
-  display: grid;
-  text-align: center;
-`;
-
-const IconsWrapper = styled.div`
-  min-width: 40vw;
-  display: flex;
-  justify-content: space-evenly;
-`;
