@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components/macro';
 import GlobalStyle from '../styles/GlobalStyle';
 
 const Layout = ({ children }) => {
   return (
-    <LayoutWrapper>
+    <div>
       <GlobalStyle />
 
       <main>{children}</main>
@@ -22,7 +21,7 @@ const Layout = ({ children }) => {
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
       </footer>
-    </LayoutWrapper>
+    </div>
   );
 };
 
@@ -31,9 +30,3 @@ Layout.propTypes = {
 };
 
 export default Layout;
-
-const LayoutWrapper = styled.div`
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-`;
