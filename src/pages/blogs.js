@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
+import BlogCard from '../components/Blog/BlogCard';
 
 export default function blogs() {
   return (
@@ -9,16 +10,19 @@ export default function blogs() {
         render={data => {
           return (
             <div>
-              {data.allMarkdownRemark.edges.map(({ node }) => (
-                <div>
-                  <p>{node.frontmatter.title}</p>
-                  <p>{node.frontmatter.date}</p>
-                  <p>{node.frontmatter.author}</p>
-                  <p>{node.frontmatter.slug}</p>
-                  <p>{node.frontmatter.tags}</p>
-                  <p>{node.excerpt}</p>
-                </div>
-              ))}
+              {data.allMarkdownRemark.edges.map(({ node }) => {
+                const { title, date, author, slug, tags } = node.frontmatter;
+                return (
+                  <BlogCard
+                    title={title}
+                    date={date}
+                    author={author}
+                    slug={slug}
+                    tags={tags}
+                    excerpt={node.excerpt}
+                  />
+                );
+              })}
             </div>
           );
         }}
