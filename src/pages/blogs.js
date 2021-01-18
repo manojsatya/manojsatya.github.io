@@ -11,13 +11,13 @@ export default function blogs() {
           return (
             <div>
               {data.allMarkdownRemark.edges.map(({ node }) => {
-                const { title, date, author, slug, tags } = node.frontmatter;
+                const { title, date, author, tags } = node.frontmatter;
                 return (
                   <BlogCard
                     title={title}
                     date={date}
                     author={author}
-                    slug={slug}
+                    slug={node.fields.slug}
                     tags={tags}
                     excerpt={node.excerpt}
                   />
@@ -37,11 +37,13 @@ const blogsQuery = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             date
             author
-            slug
             tags
           }
           excerpt
