@@ -39,7 +39,7 @@ const IndexPage = () => (
           alt="portfolio"
           className="max-w-xs rounded-full mx-auto"
         />
-        <h3 className="m-4">
+        <h3 className="m-2 text-xl">
           Hi, I am Manoj Satyanarayana from India. I am a software developer in
           Hamburg, Germany
         </h3>

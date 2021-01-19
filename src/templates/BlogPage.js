@@ -1,13 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Layout from '../components/layout';
 
 export default function BlogPage({ data }) {
   console.log(data, 'data');
   return (
-    <article
-      dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-      className="text-2xl"
-    />
+    <Layout>
+      <article
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        className="text-2xl font-extrabold"
+      />
+    </Layout>
   );
 }
 
