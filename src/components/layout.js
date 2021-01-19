@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GlobalStyle from '../styles/GlobalStyle';
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <GlobalStyle />
-
-      <main>{children}</main>
+    <div className="font-body">
+      <main className="max-w-screen-lg m-auto">{children}</main>
       <footer
         style={{
           position: 'absolute',
