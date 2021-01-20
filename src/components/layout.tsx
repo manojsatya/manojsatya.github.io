@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Layout = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   return (
     <div className="font-body">
       <main className="max-w-screen-lg m-auto">{children}</main>
